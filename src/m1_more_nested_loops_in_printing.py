@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Geoffrey Tomlinson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -54,25 +54,34 @@ def triangle_right_justified(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
-    # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # HINT: Do the following problem FIRST, then convert x's to spaces:
-    #          xxxx1
-    #          xxx12
-    #          xx123
-    #          x1234
-    #          12345
-    #
-    # HINT: One way to solve this problem is to have TWO inner loops,
-    #       one after the other.
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    space = ' '
+    for j in range(r):
+        for i in range(r - j):
+            print(space, end='')
+        for k in range(j + 1):
+            print(k + 1, end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 2. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # HINT: Do the following problem FIRST, then convert x's to spaces:
+        #          xxxx1
+        #          xxx12
+        #          xx123
+        #          x1234
+        #          12345
+        #
+        # HINT: One way to solve this problem is to have TWO inner loops,
+        #       one after the other.
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 def run_test_triangle_upside_down():
@@ -108,15 +117,24 @@ def triangle_upside_down(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
-    # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    space = ' '
+    for j in range(r):
+        for i in range(j):
+            print(space, end='')
+        for k in range(r - j):
+            print(k + 1, end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 3. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 def run_test_vee():
@@ -159,15 +177,27 @@ def vee(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
-    # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    space = ' '
+    for j in range(r):
+        for i in range(j):
+            print(space, end='')
+        for k in range(r - j):
+            print(k + 1, end='')
+        print('-', end='')
+        for k in range(r - j, 0, -1):
+            print(k, end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 4. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 def run_test_numbers_constant_forward():
@@ -215,17 +245,25 @@ def numbers_constant_forward(r, maxnum, n):
 
     Preconditions:  r, maxnum and n are positive integers.
     """
-    # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # HINT: What loop structure do you need for this problem?
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum):
+            for u in range(n):
+                print(k + 1, end='')
+            print(' ', end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 5. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # HINT: What loop structure do you need for this problem?
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 def run_test_numbers_constant_backwards():
@@ -259,15 +297,23 @@ def numbers_constant_backwards(r, maxnum, n):
        777 666 555 444 333 222 111
     Preconditions:  r, maxnum and n are positive integers.
     """
-    # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum, 0, -1):
+            for u in range(n):
+                print(k, end='')
+            print(' ', end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 6. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 def run_test_numbers_increasing_forward():
@@ -311,15 +357,23 @@ def numbers_increasing_forward(r, maxnum):
 
     Preconditions:  r and maxnum are positive integers.
     """
-    # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
-    #          Some tests are already written for you (above).
-    #
-    # IMPLEMENTATION RESTRICTION:
-    #   ** You may NOT use string multiplication **
-    #   in this or the other problems in this module, as doing so would
-    #   defeat the goal of providing practice at loops within loops.
-    # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum):
+            for u in range(k + 1):
+                print(k + 1, end='')
+            print(' ', end='')
+        print()
+
+        # ------------------------------------------------------------------
+        # DONE: 7. Implement and test this function.
+        #          Some tests are already written for you (above).
+        #
+        # IMPLEMENTATION RESTRICTION:
+        #   ** You may NOT use string multiplication **
+        #   in this or the other problems in this module, as doing so would
+        #   defeat the goal of providing practice at loops within loops.
+        # ------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------
